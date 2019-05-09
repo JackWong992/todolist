@@ -1,7 +1,6 @@
 # Logs
 logs
 *.log
-/.idea/*
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -60,3 +59,5 @@ typings/
 
 # next.js build output
 .next
+*.xml
+.idea/todolist.iml

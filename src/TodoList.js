@@ -16,7 +16,9 @@ class TodoList extends Component{
               value={this.state.inputValue}
               onChange={this.handleInputChange.bind(this)}
           />
-          <button>提交</button>
+          <button
+              onClick={this.handleButtonClick.bind(this)}
+          >提交</button>
           <ul>
             <li>学习英语</li>
             <li>学习React</li>
@@ -29,6 +31,9 @@ class TodoList extends Component{
       inputValue: e.target.value
     })
     console.log(this.state.inputValue)
+  }
+  handleButtonClick(){
+
   }
 }
 
