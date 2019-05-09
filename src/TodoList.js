@@ -20,8 +20,11 @@ class TodoList extends Component{
               onClick={this.handleButtonClick.bind(this)}
           >提交</button>
           <ul>
-            <li>学习英语</li>
-            <li>学习React</li>
+            {
+              this.state.list.map( (item,index)=>{
+                return <li key={index} onClick={this.handleItemClick.bind(this,index)}>{item}</li>
+              } )
+            }
           </ul>
         </Fragment>
     )
@@ -30,10 +33,19 @@ class TodoList extends Component{
     this.setState({
       inputValue: e.target.value
     })
-    console.log(this.state.inputValue)
   }
   handleButtonClick(){
-
+    this.setState({
+      list: [...this.state.list,this.state.inputValue],
+      inputValue: ''
+    })
+  }
+  handleItemClick(index){
+    const list = [...this.state.list]
+    list.splice(index,1)
+    this.setState({
+      list: list
+    })
   }
 }
 
